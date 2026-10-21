@@ -120,8 +120,8 @@ namespace Unity.FPS.Game
         [Tooltip("Unparent the muzzle flash instance on spawn")]
         public bool UnparentMuzzleFlash;
 
-        [Tooltip("sound played when shooting")]
-        public AudioClip ShootSfx;
+        [Tooltip("Sounds played when shooting. One is picked at random for each shot")]
+        public AudioClip[] ShootSfxClips;
 
         [Tooltip("Sound played when changing to this weapon")]
         public AudioClip ChangeWeaponSfx;
@@ -214,6 +214,16 @@ namespace Unity.FPS.Game
             nextShell.AddForce(nextShell.transform.up * ShellCasingEjectionForce, ForceMode.Impulse);
 
             m_PhysicalAmmoPool.Enqueue(nextShell);
+        }
+
+        void PlayRandomShootSfx()
+        {
+            if (ShootSfxClips == null || ShootSfxClips.Length == 0)
+                return;
+
+            AudioClip clip = ShootSfxClips[UnityEngine.Random.Range(0, ShootSfxClips.Length)];
+            if (clip)
+                m_ShootAudioSource.PlayOneShot(clip);
         }
 
         void PlaySFX(AudioClip sfx) => AudioUtility.CreateSFX(sfx, transform.position, AudioUtility.AudioGroups.WeaponShoot, 0.0f);
@@ -349,7 +359,7 @@ namespace Unity.FPS.Game
                 {
                     if (!m_ContinuousShootAudioSource.isPlaying)
                     {
-                        m_ShootAudioSource.PlayOneShot(ShootSfx);
+                        PlayRandomShootSfx();
                         m_ShootAudioSource.PlayOneShot(ContinuousShootStartSfx);
                         m_ContinuousShootAudioSource.Play();
                     }
@@ -507,9 +517,9 @@ namespace Unity.FPS.Game
             m_LastTimeShot = Time.time;
 
             // play shoot SFX
-            if (ShootSfx && !UseContinuousShootSound)
+            if (!UseContinuousShootSound)
             {
-                m_ShootAudioSource.PlayOneShot(ShootSfx);
+                PlayRandomShootSfx();
             }
 
             // Trigger attack animation if there is any

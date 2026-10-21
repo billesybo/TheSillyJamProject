@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad90ba0b1477764da373f5ec01a8cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: Blaster
+  WeaponName: Kixifier
   WeaponIcon: {fileID: 21300000, guid: 3c187e19c32c13542ba8a0c1a3a88ece, type: 3}
   CrosshairDataDefault:
     CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
@@ -195,14 +195,14 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 8924682559891268397, guid: 186d78b688cb8b942a4ad70b8cc22abc,
     type: 3}
   DelayBetweenShots: 0.1
-  BulletSpreadAngle: 0.3
+  BulletSpreadAngle: 2.03
   BulletsPerShot: 1
   RecoilForce: 1
   AimZoomRatio: 0.5
   AimOffset: {x: 0, y: 0.075, z: 0}
-  AutomaticReload: 1
+  AutomaticReload: 0
   HasPhysicalBullets: 0
-  ClipSize: 30
+  ClipSize: 16
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2225486910712267859}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29a2833c2faa8a3439fd04522cf5733c, type: 3}
   m_Name: 

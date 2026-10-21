@@ -44,6 +44,8 @@ namespace Unity.FPS.UI
 
         public bool IsTyping => m_TypeRoutine != null;
 
+        const int AudioFrequency = 3;
+
         Coroutine m_TypeRoutine;
         float m_BasePitch = 1f;
 
@@ -117,8 +119,12 @@ namespace Unity.FPS.UI
                 Text.maxVisibleCharacters = i;
 
                 char character = textInfo.characterInfo[i - 1].character;
-                if (!(SkipSoundOnWhitespace && char.IsWhiteSpace(character)))
-                    PlayLetterSound();
+
+                if (i % AudioFrequency == 0)
+                {
+                    if (!(SkipSoundOnWhitespace && char.IsWhiteSpace(character)))
+                        PlayLetterSound();
+                }
 
                 float delay = DelayBetweenLetters;
                 if (IsPunctuation(character))

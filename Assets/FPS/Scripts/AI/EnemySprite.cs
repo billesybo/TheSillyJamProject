@@ -157,7 +157,8 @@ namespace Unity.FPS.AI
                 return;
 
             Texture2D texture = sprite.texture;
-            m_Material.SetTexture(m_BaseMapId, texture);
+            // m_Material.SetTexture(m_BaseMapId, texture);
+            m_Material.mainTexture = texture;
 
             // Crop to the sprite's rect, so sprites from a sprite sheet/atlas show correctly
             Rect rect = sprite.textureRect;

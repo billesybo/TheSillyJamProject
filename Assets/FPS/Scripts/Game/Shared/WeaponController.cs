@@ -94,6 +94,9 @@ namespace Unity.FPS.Game
         [Tooltip("Maximum amount of ammo in the gun")]
         public int MaxAmmo = 8;
 
+        [Tooltip("Time from starting the reload animation until the weapon is reloaded")]
+        public float ReloadDuration = 1.5f;
+
         [Header("Charging parameters (charging weapons only)")]
         [Tooltip("Trigger a shot when maximum charge is reached")]
         public bool AutomaticReleaseOnCharged;
@@ -136,6 +139,7 @@ namespace Unity.FPS.Game
         int m_CarriedPhysicalBullets;
         float m_CurrentAmmo;
         float m_LastTimeShot = Mathf.NegativeInfinity;
+        float m_ReloadTimer;
         public float LastChargeTriggerTimestamp { get; private set; }
         Vector3 m_LastMuzzlePosition;
 
@@ -217,25 +221,53 @@ namespace Unity.FPS.Game
 
         void Reload()
         {
-            if (m_CarriedPhysicalBullets > 0)
+            if (m_CarriedPhysicalBullets > 0 && HasPhysicalBullets)
             {
                 m_CurrentAmmo = Mathf.Min(m_CarriedPhysicalBullets, ClipSize);
             }
+
+            if (!HasPhysicalBullets)
+                m_CurrentAmmo = ClipSize;
 
             IsReloading = false;
         }
 
         public void StartReloadAnimation()
         {
+            if (IsReloading)
+                return;
+            
+            if (!HasPhysicalBullets)
+            {
+                IsReloading = true;
+                m_ReloadTimer = ReloadDuration;
+                return;
+            }
+
             if (m_CurrentAmmo < m_CarriedPhysicalBullets)
             {
-                GetComponent<Animator>().SetTrigger("Reload");
+                Animator animator = GetComponent<Animator>();
+                if (animator)
+                    animator.SetTrigger("Reload");
+                
                 IsReloading = true;
+                m_ReloadTimer = ReloadDuration;
             }
+        }
+
+        void UpdateReload()
+        {
+            if (!IsReloading)
+                return;
+
+            m_ReloadTimer -= Time.deltaTime;
+            if (m_ReloadTimer <= 0f)
+                Reload();
         }
 
         void Update()
         {
+            UpdateReload();
             UpdateAmmo();
             UpdateCharge();
             UpdateContinuousShootSound();

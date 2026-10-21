@@ -245,12 +245,12 @@ MonoBehaviour:
     type: 3}
   ImpactVfxLifetime: 5
   ImpactVfxSpawnOffset: 0.1
-  ImpactSfxClip: {fileID: 0}
+  ImpactSfxClip: {fileID: 8300000, guid: 293e2cf9e40ef3c4b8eb007ae127cc6d, type: 3}
   HittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   Speed: 50
-  GravityDownAcceleration: 0
+  GravityDownAcceleration: 1
   TrajectoryCorrectionDistance: 5
   InheritWeaponVelocity: 0
   Damage: 15

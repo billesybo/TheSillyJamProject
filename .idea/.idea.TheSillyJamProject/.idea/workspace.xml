@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="" />
+    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/IntroMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/IntroMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene novo test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene novo test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/CompassElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/UI/CompassElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,13 +69,15 @@
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false" ignored-value-for-modified-check="45516">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="45516" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -168,6 +177,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/UI/CompassElement.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\UI\CompassElement.cs" containingFunctionPresentation="Method 'Awake'">
+            <startOffsets>
+              <option value="470" />
+            </startOffsets>
+            <endOffsets>
+              <option value="492" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

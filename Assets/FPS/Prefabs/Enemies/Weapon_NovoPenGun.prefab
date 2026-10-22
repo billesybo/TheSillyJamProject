@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8611219238898500882}
   - component: {fileID: 8379714894312777531}
   m_Layer: 10
-  m_Name: Weapon_MachineGun
+  m_Name: Weapon_NovoPenGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad90ba0b1477764da373f5ec01a8cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: mg
+  WeaponName: pengun
   WeaponIcon: {fileID: 0}
   CrosshairDataDefault:
     CrosshairSprite: {fileID: 0}
@@ -91,9 +91,9 @@ MonoBehaviour:
   WeaponRoot: {fileID: 1217837640864469842}
   WeaponMuzzle: {fileID: 8623190687495969480}
   ShootType: 1
-  ProjectilePrefab: {fileID: 8924682559891268397, guid: 154bfb4989fe16d439e8f3fb7c20b72b,
+  ProjectilePrefab: {fileID: 8924682559891268397, guid: d3580737c6e4b1544a3c08e8ae222f57,
     type: 3}
-  DelayBetweenShots: 0.06
+  DelayBetweenShots: 0.08
   BulletSpreadAngle: 0
   BulletsPerShot: 1
   RecoilForce: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   AimOffset: {x: 0, y: 0, z: 0}
   AutomaticReload: 1
   HasPhysicalBullets: 0
-  ClipSize: 30
+  ClipSize: 5
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
@@ -109,7 +109,7 @@ MonoBehaviour:
   AmmoReloadRate: Infinity
   AmmoReloadDelay: 0.6
   MaxAmmo: 15
-  ReloadDuration: 1.5
+  ReloadDuration: 5
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1

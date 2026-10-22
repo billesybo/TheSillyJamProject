@@ -118,7 +118,7 @@ MonoBehaviour:
   MuzzleFlashPrefab: {fileID: 7093081038624901782}
   UnparentMuzzleFlash: 0
   ShootSfxClips:
-  - {fileID: 8300000, guid: 0d44f0cb2e91f5f4ca09aded9a1bd9ab, type: 3}
+  - {fileID: 8300000, guid: cddb55fda3ca63f41b56e7e5eb197cab, type: 3}
   ChangeWeaponSfx: {fileID: 0}
   HudSprite: {fileID: 0}
   WalkAnimation: {fileID: 0}

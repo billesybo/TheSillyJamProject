@@ -2217,6 +2217,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e727652c058d6b84ea812043199560b7, type: 3}
+--- !u!1001 &508462272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2015434656898269652, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_NovoScientist
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28000355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82cc207dbe46cce4395e3f2f67199891, type: 3}
 --- !u!1001 &556553668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5872,6 +5940,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bb3ef68f11ffa04fac728ad3fdaccc7, type: 3}
+--- !u!1001 &1576650972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2015434656898269652, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_NovoScientist (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -63.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28000355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 29.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015434656898269656, guid: 82cc207dbe46cce4395e3f2f67199891,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82cc207dbe46cce4395e3f2f67199891, type: 3}
 --- !u!1001 &1600142796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9996,6 +10132,8 @@ SceneRoots:
   - {fileID: 861932623}
   - {fileID: 273665066}
   - {fileID: 988556934}
+  - {fileID: 508462272}
+  - {fileID: 1576650972}
   - {fileID: 2729281214355838732}
   - {fileID: 2729281214372112987}
   - {fileID: 2729281213105387550}

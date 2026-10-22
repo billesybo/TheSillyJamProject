@@ -504,13 +504,17 @@ MonoBehaviour:
   BaseMapProperty: _BaseMap
   TimeBetweenSprites: 0.25
   UnDamaged:
-  - {fileID: 21300000, guid: 33a5ea3624fd26b42baf1b47bba3765e, type: 3}
+  - {fileID: 21300000, guid: fc46abcee3d41af44b5631f3e4f8e2ca, type: 3}
+  - {fileID: 21300000, guid: 4d4117c7cf4a3a447914d55e08f71b7f, type: 3}
   LightlyDamaged:
-  - {fileID: 21300000, guid: ea77b780cc06044478a9cfa7ca4c7395, type: 3}
+  - {fileID: 21300000, guid: 2cd45f2f2e08cf042a60c4ec70797f17, type: 3}
+  - {fileID: 21300000, guid: f43ae2a6f9adb3b4486d973e6fecde58, type: 3}
   Damaged:
-  - {fileID: 21300000, guid: 6435725b48748ac4296a11247ba12f2e, type: 3}
+  - {fileID: 21300000, guid: 1a86a811e03748f418b8f5350b9d304e, type: 3}
+  - {fileID: 21300000, guid: 17ce23757bcd0d6479879135ca60b80f, type: 3}
   SeverelyDamaged:
-  - {fileID: 21300000, guid: 2879fd944bc508f4ba2807b4fe9471fb, type: 3}
+  - {fileID: 21300000, guid: 84df4189ac2b81e4981fc3e436b5c862, type: 3}
+  - {fileID: 21300000, guid: 3f040e0913f743147ba4990057a3028d, type: 3}
   LightlyDamagedRatio: 0.99
   DamagedRatio: 0.6
   SeverelyDamagedRatio: 0.3

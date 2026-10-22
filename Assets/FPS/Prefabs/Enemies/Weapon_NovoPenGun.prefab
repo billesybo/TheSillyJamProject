@@ -108,7 +108,7 @@ MonoBehaviour:
   ShellPoolSize: 1
   AmmoReloadRate: Infinity
   AmmoReloadDelay: 0.6
-  MaxAmmo: 15
+  MaxAmmo: 4
   ReloadDuration: 5
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2

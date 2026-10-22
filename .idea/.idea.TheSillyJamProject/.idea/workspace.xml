@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" afterDir="false" />
-    </list>
+    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,13 +119,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/AI/EnemySprite.cs</url>
-          <line>159</line>
+          <line>190</line>
           <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\AI\EnemySprite.cs" containingFunctionPresentation="Method 'SetSprite'">
             <startOffsets>
-              <option value="4996" />
+              <option value="6063" />
             </startOffsets>
             <endOffsets>
-              <option value="5040" />
+              <option value="6107" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

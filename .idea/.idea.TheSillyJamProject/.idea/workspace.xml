@@ -4,10 +4,8 @@
     <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/GameHUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/UI/GameHUD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/EnemyMobile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/AI/EnemyMobile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Kixifier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Kixifier.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Scenes/MainScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

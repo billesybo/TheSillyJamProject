@@ -399,7 +399,10 @@ namespace Unity.FPS.AI
             for (int i = 0; i < m_Weapons.Length; i++)
             {
                 // orient weapon towards player
-                Vector3 weaponForward = (lookPosition - m_Weapons[i].WeaponRoot.transform.position).normalized;
+                Transform weaponTransform = m_Weapons[i].WeaponRoot
+                    ? m_Weapons[i].WeaponRoot.transform
+                    : m_Weapons[i].transform;
+                Vector3 weaponForward = (lookPosition - weaponTransform.position).normalized;
                 m_Weapons[i].transform.forward = weaponForward;
             }
         }

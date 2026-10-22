@@ -41,7 +41,7 @@ namespace Unity.FPS.Game
         public CrosshairData CrosshairDataTargetInSight;
 
         [Header("Internal References")]
-        [Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
+        [Tooltip("Optional root object for the 3D weapon model, this is what will be deactivated when the weapon isn't active. Leave empty for sprite-only weapons")]
         public GameObject WeaponRoot;
 
         [Tooltip("Tip of the weapon, where the projectiles are shot")]
@@ -126,6 +126,20 @@ namespace Unity.FPS.Game
         [Tooltip("Sound played when changing to this weapon")]
         public AudioClip ChangeWeaponSfx;
 
+        [Header("Sprite Weapon (player only)")]
+        [Tooltip("Optional sprite shown on the HUD for this weapon, Doom style. Leave empty to use the 3D model")]
+        public Sprite HudSprite;
+
+        [Tooltip("Optional looping animation played on the HUD sprite while the player is moving")]
+        public AnimationClip WalkAnimation;
+
+        [Tooltip("Optional animation played on the HUD sprite each time the weapon fires")]
+        public AnimationClip ShootAnimation;
+
+        [Tooltip("Optional animation played on the HUD sprite while reloading. It is sped up or slowed down to last for ReloadDuration")]
+        public AnimationClip ReloadAnimation;
+
+        [Header("Continuous Shooting")]
         [Tooltip("Continuous Shooting Sound")] public bool UseContinuousShootSound = false;
         public AudioClip ContinuousShootStartSfx;
         public AudioClip ContinuousShootLoopSfx;
@@ -145,6 +159,10 @@ namespace Unity.FPS.Game
 
         public GameObject Owner { get; set; }
         public GameObject SourcePrefab { get; set; }
+
+        // Set by PlayerWeaponsManager. Only player weapons drive the HUD weapon sprite
+        public bool IsPlayerWeapon { get; set; }
+        public bool HasHudSprite => HudSprite != null;
         public bool IsCharging { get; private set; }
         public float CurrentAmmoRatio { get; private set; }
         public bool IsWeaponActive { get; private set; }
@@ -166,6 +184,9 @@ namespace Unity.FPS.Game
         const string k_AnimAttackParameter = "Attack";
 
         private Queue<Rigidbody> m_PhysicalAmmoPool;
+
+        WeaponSpriteDisplay m_SpriteDisplay;
+        bool m_HasSearchedForSpriteDisplay;
 
         void Awake()
         {
@@ -198,6 +219,33 @@ namespace Unity.FPS.Game
                     m_PhysicalAmmoPool.Enqueue(shell.GetComponent<Rigidbody>());
                 }
             }
+        }
+
+        void Start()
+        {
+            GetSpriteDisplay();
+        }
+
+        void OnDestroy()
+        {
+            if (m_SpriteDisplay != null)
+                m_SpriteDisplay.HideWeapon(this);
+        }
+
+        // Finds the HUD sprite display for player weapons. Searched for lazily, since PlayerWeaponsManager
+        // calls ShowWeapon before this weapon's Start has run
+        WeaponSpriteDisplay GetSpriteDisplay()
+        {
+            if (!IsPlayerWeapon)
+                return null;
+
+            if (!m_HasSearchedForSpriteDisplay)
+            {
+                m_SpriteDisplay = FindObjectOfType<WeaponSpriteDisplay>();
+                m_HasSearchedForSpriteDisplay = true;
+            }
+
+            return m_SpriteDisplay;
         }
 
         public void AddCarriablePhysicalBullets(int count) => m_CarriedPhysicalBullets = Mathf.Max(m_CarriedPhysicalBullets + count, MaxAmmo);
@@ -249,8 +297,7 @@ namespace Unity.FPS.Game
             
             if (!HasPhysicalBullets)
             {
-                IsReloading = true;
-                m_ReloadTimer = ReloadDuration;
+                BeginReload();
                 return;
             }
 
@@ -259,10 +306,19 @@ namespace Unity.FPS.Game
                 Animator animator = GetComponent<Animator>();
                 if (animator)
                     animator.SetTrigger("Reload");
-                
-                IsReloading = true;
-                m_ReloadTimer = ReloadDuration;
+
+                BeginReload();
             }
+        }
+
+        void BeginReload()
+        {
+            IsReloading = true;
+            m_ReloadTimer = ReloadDuration;
+
+            WeaponSpriteDisplay spriteDisplay = GetSpriteDisplay();
+            if (spriteDisplay != null)
+                spriteDisplay.PlayReload(this, ReloadDuration);
         }
 
         void UpdateReload()
@@ -374,7 +430,8 @@ namespace Unity.FPS.Game
 
         public void ShowWeapon(bool show)
         {
-            WeaponRoot.SetActive(show);
+            if (WeaponRoot)
+                WeaponRoot.SetActive(show);
 
             if (show && ChangeWeaponSfx)
             {
@@ -382,6 +439,15 @@ namespace Unity.FPS.Game
             }
 
             IsWeaponActive = show;
+
+            WeaponSpriteDisplay spriteDisplay = GetSpriteDisplay();
+            if (spriteDisplay != null)
+            {
+                if (show)
+                    spriteDisplay.ShowWeapon(this);
+                else
+                    spriteDisplay.HideWeapon(this);
+            }
         }
 
         public void UseAmmo(float amount)
@@ -527,6 +593,10 @@ namespace Unity.FPS.Game
             {
                 WeaponAnimator.SetTrigger(k_AnimAttackParameter);
             }
+
+            WeaponSpriteDisplay spriteDisplay = GetSpriteDisplay();
+            if (spriteDisplay != null)
+                spriteDisplay.PlayShoot(this);
 
             OnShoot?.Invoke();
             OnShootProcessed?.Invoke();

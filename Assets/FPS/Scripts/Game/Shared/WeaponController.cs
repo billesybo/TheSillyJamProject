@@ -181,6 +181,9 @@ namespace Unity.FPS.Game
 
         public bool IsReloading { get; private set; }
 
+        // Physical-bullet weapons need spare bullets to reload; others always refill to ClipSize
+        public bool CanReload => !IsReloading && (!HasPhysicalBullets || m_CurrentAmmo < m_CarriedPhysicalBullets);
+
         const string k_AnimAttackParameter = "Attack";
 
         private Queue<Rigidbody> m_PhysicalAmmoPool;
@@ -292,23 +295,17 @@ namespace Unity.FPS.Game
 
         public void StartReloadAnimation()
         {
-            if (IsReloading)
+            if (!CanReload)
                 return;
-            
-            if (!HasPhysicalBullets)
-            {
-                BeginReload();
-                return;
-            }
 
-            if (m_CurrentAmmo < m_CarriedPhysicalBullets)
+            if (HasPhysicalBullets)
             {
                 Animator animator = GetComponent<Animator>();
                 if (animator)
                     animator.SetTrigger("Reload");
-
-                BeginReload();
             }
+
+            BeginReload();
         }
 
         void BeginReload()

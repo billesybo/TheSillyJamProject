@@ -23,16 +23,19 @@ namespace Unity.FPS.AI
         public string BaseMapProperty = "_BaseMap";
 
         [Header("Sprites")]
-        [Tooltip("Sprites used while undamaged. One is picked at random")]
+        [Tooltip("Seconds between switching to the next sprite of the current state (0 = never switch)")]
+        public float TimeBetweenSprites = 0.25f;
+
+        [Tooltip("Sprites cycled through while undamaged, starting from a random one")]
         public Sprite[] UnDamaged;
 
-        [Tooltip("Sprites used while lightly damaged. One is picked at random")]
+        [Tooltip("Sprites cycled through while lightly damaged, starting from a random one")]
         public Sprite[] LightlyDamaged;
 
-        [Tooltip("Sprites used while damaged. One is picked at random")]
+        [Tooltip("Sprites cycled through while damaged, starting from a random one")]
         public Sprite[] Damaged;
 
-        [Tooltip("Sprites used while severely damaged. One is picked at random")]
+        [Tooltip("Sprites cycled through while severely damaged, starting from a random one")]
         public Sprite[] SeverelyDamaged;
 
         [Header("Health thresholds")]
@@ -52,6 +55,8 @@ namespace Unity.FPS.AI
 
         Material m_Material;
         int m_BaseMapId;
+        int m_SpriteIndex;
+        float m_SpriteTimer;
 
         void Awake()
         {
@@ -91,6 +96,19 @@ namespace Unity.FPS.AI
         {
             CurrentState = DamageState.UnDamaged;
             ShowRandomSprite(CurrentState);
+        }
+
+        void Update()
+        {
+            if (TimeBetweenSprites <= 0f)
+                return;
+
+            m_SpriteTimer += Time.deltaTime;
+            if (m_SpriteTimer < TimeBetweenSprites)
+                return;
+
+            m_SpriteTimer -= TimeBetweenSprites;
+            ShowNextSprite();
         }
 
         void OnDestroy()
@@ -148,7 +166,20 @@ namespace Unity.FPS.AI
             if (sprites == null || sprites.Length == 0)
                 return;
 
-            SetSprite(sprites[Random.Range(0, sprites.Length)]);
+            m_SpriteIndex = Random.Range(0, sprites.Length);
+            m_SpriteTimer = 0f;
+            SetSprite(sprites[m_SpriteIndex]);
+        }
+
+        // Steps to the next sprite of the current state, wrapping around. Does nothing with fewer than two sprites
+        void ShowNextSprite()
+        {
+            Sprite[] sprites = GetSprites(CurrentState);
+            if (sprites == null || sprites.Length < 2)
+                return;
+
+            m_SpriteIndex = (m_SpriteIndex + 1) % sprites.Length;
+            SetSprite(sprites[m_SpriteIndex]);
         }
 
         public void SetSprite(Sprite sprite)

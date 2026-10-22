@@ -272,7 +272,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   FlashOnHitDuration: 0.2
   DamageTick: {fileID: 8300000, guid: a7fae22399a6e1d448dc0dd2210f1dac, type: 3}
-  DeathVfx: {fileID: 8950624839484268180, guid: 2a8f5052fe50f7b41b17149abb0f7414,
+  DeathVfx: {fileID: 8950624839484268180, guid: c4e9c162323e289409574c93a5e34a05,
     type: 3}
   DeathVfxSpawnPoint: {fileID: 381893446485871685}
   LootPrefab: {fileID: 2529580269645609534, guid: 39651562144131d4fb7d2968f79a0206,

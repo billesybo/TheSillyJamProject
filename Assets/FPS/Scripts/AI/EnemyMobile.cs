@@ -134,7 +134,8 @@ namespace Unity.FPS.AI
 
         void OnAttack()
         {
-            Animator.SetTrigger(k_AnimAttackParameter);
+            if(Animator != null)
+                Animator.SetTrigger(k_AnimAttackParameter);
         }
 
         void OnDetectedTarget()
@@ -154,7 +155,8 @@ namespace Unity.FPS.AI
                 AudioUtility.CreateSFX(OnDetectSfx, transform.position, AudioUtility.AudioGroups.EnemyDetection, 1f);
             }
 
-            Animator.SetBool(k_AnimAlertedParameter, true);
+            if(Animator != null)
+                Animator.SetBool(k_AnimAlertedParameter, true);
         }
 
         void OnLostTarget()
@@ -169,7 +171,8 @@ namespace Unity.FPS.AI
                 OnDetectVfx[i].Stop();
             }
 
-            Animator.SetBool(k_AnimAlertedParameter, false);
+            if(Animator != null)
+                Animator.SetBool(k_AnimAlertedParameter, false);
         }
 
         void OnDamaged()
@@ -180,7 +183,8 @@ namespace Unity.FPS.AI
                 RandomHitSparks[n].Play();
             }
 
-            Animator.SetTrigger(k_AnimOnDamagedParameter);
+            if(Animator != null)
+                Animator.SetTrigger(k_AnimOnDamagedParameter);
         }
     }
 }

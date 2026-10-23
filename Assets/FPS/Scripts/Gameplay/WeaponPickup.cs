@@ -27,8 +27,14 @@ namespace Unity.FPS.Gameplay
             {
                 if (playerWeaponsManager.AddWeapon(WeaponPrefab))
                 {
+                    WeaponController newWeapon = playerWeaponsManager.HasWeapon(WeaponPrefab);
+                    if (playerWeaponsManager.AutoEquipPickedUpWeapons && newWeapon != null)
+                    {
+                        // Equip the weapon we just picked up
+                        playerWeaponsManager.SwitchToWeaponIndex(playerWeaponsManager.GetSlotIndex(newWeapon));
+                    }
                     // Handle auto-switching to weapon if no weapons currently
-                    if (playerWeaponsManager.GetActiveWeapon() == null)
+                    else if (playerWeaponsManager.GetActiveWeapon() == null)
                     {
                         playerWeaponsManager.SwitchWeapon(true);
                     }

@@ -19,6 +19,9 @@ namespace Unity.FPS.Gameplay
         [Tooltip("List of weapon the player will start with")]
         public List<WeaponController> StartingWeapons = new List<WeaponController>();
 
+        [Tooltip("Switch to a weapon as soon as it's picked up")]
+        public bool AutoEquipPickedUpWeapons = true;
+
         [Header("References")] [Tooltip("Secondary camera used to avoid seeing weapon go throw geometries")]
         public Camera WeaponCamera;
 
@@ -508,6 +511,9 @@ namespace Unity.FPS.Gameplay
 
             return false;
         }
+
+        // Returns the slot index holding this weapon instance, or -1 if it isn't in any slot
+        public int GetSlotIndex(WeaponController weapon) => System.Array.IndexOf(m_WeaponSlots, weapon);
 
         public WeaponController GetActiveWeapon()
         {

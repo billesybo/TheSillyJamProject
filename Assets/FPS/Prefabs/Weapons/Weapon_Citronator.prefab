@@ -60,7 +60,7 @@ MonoBehaviour:
     CrosshairSprite: {fileID: 21300000, guid: 14aa1febcf423c84997aa10d7ff64d17, type: 3}
     CrosshairSize: 100
     CrosshairColor: {r: 0, g: 1, b: 0.4226508, a: 1}
-  WeaponRoot: {fileID: 5646165488041817916}
+  WeaponRoot: {fileID: 0}
   WeaponMuzzle: {fileID: 2749496858225023403}
   ShootType: 0
   ProjectilePrefab: {fileID: 5542020336735652036, guid: e420ed1dd5e92884db5e283bb7c9efed,
@@ -92,7 +92,7 @@ MonoBehaviour:
   ShootSfxClips:
   - {fileID: 8300000, guid: 70caaeff99b14e049a258f3809d04cfa, type: 3}
   ChangeWeaponSfx: {fileID: 8300000, guid: 6f3e0904bbbace745bdef08cdbcdfec0, type: 3}
-  HudSprite: {fileID: 0}
+  HudSprite: {fileID: 21300000, guid: 41d76f8d56ed0a3419f2e0dbe4427f17, type: 3}
   WalkAnimation: {fileID: 0}
   ShootAnimation: {fileID: 0}
   ReloadAnimation: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1625833262181473822
 Transform:
   m_ObjectHideFlags: 0

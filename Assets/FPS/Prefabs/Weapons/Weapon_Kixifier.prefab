@@ -207,16 +207,16 @@ MonoBehaviour:
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
-  AmmoReloadRate: 16
+  AmmoReloadRate: 22
   AmmoReloadDelay: 1
-  MaxAmmo: 16
+  MaxAmmo: 22
   ReloadDuration: 1.5
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
   AmmoUsageRateWhileCharging: 2
   WeaponAnimator: {fileID: 0}
-  MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 9f671b22f25370048a18fb1f821294ec,
+  MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 70df3678e305f5344888793d4b60eeae,
     type: 3}
   UnparentMuzzleFlash: 0
   ShootSfxClips:
@@ -1175,7 +1175,7 @@ Transform:
   m_GameObject: {fileID: 8088409166493606719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.124, z: 0.7}
+  m_LocalPosition: {x: -0.057, y: 0, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

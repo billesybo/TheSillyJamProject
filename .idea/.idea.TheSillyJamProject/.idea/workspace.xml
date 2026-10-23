@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="" />
+    <list default="true" id="5ebce4ff-5fcb-456c-bd42-83fc0dcc4df2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheSillyJamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Kixifier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FPS/Prefabs/Weapons/Weapon_Kixifier.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,19 +137,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs</url>
-          <line>132</line>
-          <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\Gameplay\Managers\PlayerWeaponsManager.cs" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="4971" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4988" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/Gameplay/Managers/PlayerWeaponsManager.cs</url>
           <line>137</line>
           <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\Gameplay\Managers\PlayerWeaponsManager.cs" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
@@ -160,7 +150,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/Game/Shared/WeaponController.cs</url>
-          <line>291</line>
+          <line>294</line>
           <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\Game\Shared\WeaponController.cs" containingFunctionPresentation="Method 'StartReloadAnimation'">
             <startOffsets>
               <option value="9151" />
@@ -172,17 +162,17 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/UI/CompassElement.cs</url>
-          <line>19</line>
-          <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\UI\CompassElement.cs" containingFunctionPresentation="Method 'Awake'">
+          <url>file://$PROJECT_DIR$/Assets/FPS/Scripts/UI/WeaponHUDManager.cs</url>
+          <line>39</line>
+          <properties documentPath="C:\Users\bille\Documents\TheSillyJamProject\Assets\FPS\Scripts\UI\WeaponHUDManager.cs" containingFunctionPresentation="Method 'AddWeapon'">
             <startOffsets>
-              <option value="470" />
+              <option value="1445" />
             </startOffsets>
             <endOffsets>
-              <option value="492" />
+              <option value="1522" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

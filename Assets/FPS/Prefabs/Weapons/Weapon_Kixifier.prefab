@@ -202,7 +202,7 @@ MonoBehaviour:
   AimOffset: {x: 0, y: 0.075, z: 0}
   AutomaticReload: 0
   HasPhysicalBullets: 0
-  ClipSize: 16
+  ClipSize: 22
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2

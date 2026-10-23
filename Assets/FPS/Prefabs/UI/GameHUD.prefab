@@ -2148,6 +2148,7 @@ MonoBehaviour:
   AmmoPanel: {fileID: 7784911861666327368}
   AmmoCounterPrefab: {fileID: 645032500860478885, guid: 381e109c8e235f54cbcfbe7434554e49,
     type: 3}
+  ShowOnlyActiveWeapon: 1
 --- !u!114 &5499754808462435493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,7 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5773585, g: 0.5773585, b: 0.5773585, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

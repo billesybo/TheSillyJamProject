@@ -211,7 +211,7 @@ namespace Unity.FPS.Game
                 m_ContinuousShootAudioSource.loop = true;
             }
 
-            if (HasPhysicalBullets)
+            if (HasPhysicalBullets && ShellCasing != null)
             {
                 m_PhysicalAmmoPool = new Queue<Rigidbody>(ShellPoolSize);
 
@@ -571,7 +571,7 @@ namespace Unity.FPS.Game
                 Destroy(muzzleFlashInstance, 2f);
             }
 
-            if (HasPhysicalBullets)
+            if (HasPhysicalBullets && ShellCasing != null)
             {
                 ShootShell();
                 m_CarriedPhysicalBullets--;

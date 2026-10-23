@@ -77,6 +77,10 @@ namespace Unity.FPS.Game
         public bool HasPhysicalBullets = false;
         [Tooltip("Number of bullets in a clip")]
         public int ClipSize = 30;
+        [Tooltip("Total bullets carried at the start, including the loaded clip (physical bullets only). 0 = one full clip")]
+        public int StartingCarriedBullets = 0;
+        [Tooltip("Maximum total bullets that can be carried, including the loaded clip (physical bullets only). Never less than ClipSize")]
+        public int MaxCarriedBullets = 20;
         [Tooltip("Bullet Shell Casing")]
         public GameObject ShellCasing;
         [Tooltip("Weapon Ejection Port for physical ammo")]
@@ -194,7 +198,9 @@ namespace Unity.FPS.Game
         void Awake()
         {
             m_CurrentAmmo = MaxAmmo;
-            m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
+            m_CarriedPhysicalBullets = HasPhysicalBullets
+                ? Mathf.Min(StartingCarriedBullets > 0 ? StartingCarriedBullets : ClipSize, GetMaxCarriedBullets())
+                : 0;
             m_LastMuzzlePosition = WeaponMuzzle.position;
 
             m_ShootAudioSource = GetComponent<AudioSource>();
@@ -251,7 +257,9 @@ namespace Unity.FPS.Game
             return m_SpriteDisplay;
         }
 
-        public void AddCarriablePhysicalBullets(int count) => m_CarriedPhysicalBullets = Mathf.Max(m_CarriedPhysicalBullets + count, MaxAmmo);
+        public int GetMaxCarriedBullets() => Mathf.Max(MaxCarriedBullets, ClipSize);
+
+        public void AddCarriablePhysicalBullets(int count) => m_CarriedPhysicalBullets = Mathf.Min(m_CarriedPhysicalBullets + count, GetMaxCarriedBullets());
 
         void ShootShell()
         {
@@ -451,7 +459,7 @@ namespace Unity.FPS.Game
         {
             m_CurrentAmmo = Mathf.Clamp(m_CurrentAmmo - amount, 0f, MaxAmmo);
             m_CarriedPhysicalBullets -= Mathf.RoundToInt(amount);
-            m_CarriedPhysicalBullets = Mathf.Clamp(m_CarriedPhysicalBullets, 0, MaxAmmo);
+            m_CarriedPhysicalBullets = Mathf.Clamp(m_CarriedPhysicalBullets, 0, GetMaxCarriedBullets());
             m_LastTimeShot = Time.time;
         }
 
@@ -571,10 +579,12 @@ namespace Unity.FPS.Game
                 Destroy(muzzleFlashInstance, 2f);
             }
 
-            if (HasPhysicalBullets && ShellCasing != null)
+            if (HasPhysicalBullets)
             {
-                ShootShell();
-                m_CarriedPhysicalBullets--;
+                if (ShellCasing != null)
+                    ShootShell();
+
+                m_CarriedPhysicalBullets = Mathf.Max(m_CarriedPhysicalBullets - 1, 0);
             }
 
             m_LastTimeShot = Time.time;

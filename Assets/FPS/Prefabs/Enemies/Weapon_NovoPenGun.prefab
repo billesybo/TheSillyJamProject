@@ -102,12 +102,14 @@ MonoBehaviour:
   AutomaticReload: 1
   HasPhysicalBullets: 0
   ClipSize: 5
+  StartingCarriedBullets: 0
+  MaxCarriedBullets: 20
   ShellCasing: {fileID: 0}
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
   AmmoReloadRate: Infinity
-  AmmoReloadDelay: 0.6
+  AmmoReloadDelay: 2
   MaxAmmo: 4
   ReloadDuration: 5
   AutomaticReleaseOnCharged: 0

@@ -44,6 +44,7 @@ namespace Unity.FPS.UI
         public float AmmoFillMovementSharpness = 20f;
 
         public int WeaponCounterIndex { get; set; }
+        public WeaponController Weapon => m_Weapon;
 
         PlayerWeaponsManager m_PlayerWeaponsManager;
         WeaponController m_Weapon;

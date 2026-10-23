@@ -13,6 +13,9 @@ namespace Unity.FPS.UI
         [Tooltip("Prefab for displaying weapon ammo")]
         public GameObject AmmoCounterPrefab;
 
+        [Tooltip("Only show the ammo counter of the currently selected weapon")]
+        public bool ShowOnlyActiveWeapon = true;
+
         PlayerWeaponsManager m_PlayerWeaponsManager;
         List<AmmoCounter> m_AmmoCounters = new List<AmmoCounter>();
 
@@ -44,6 +47,7 @@ namespace Unity.FPS.UI
             newAmmoCounter.Initialize(newWeapon, weaponIndex);
 
             m_AmmoCounters.Add(newAmmoCounter);
+            UpdateCounterVisibility(m_PlayerWeaponsManager.GetActiveWeapon());
         }
 
         void RemoveWeapon(WeaponController newWeapon, int weaponIndex)
@@ -66,7 +70,16 @@ namespace Unity.FPS.UI
 
         void ChangeWeapon(WeaponController weapon)
         {
+            UpdateCounterVisibility(weapon);
             UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(AmmoPanel);
+        }
+
+        void UpdateCounterVisibility(WeaponController activeWeapon)
+        {
+            foreach (AmmoCounter counter in m_AmmoCounters)
+            {
+                counter.gameObject.SetActive(!ShowOnlyActiveWeapon || counter.Weapon == activeWeapon);
+            }
         }
     }
 }
